@@ -1,0 +1,21 @@
+```tsx
+function Users() {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const newUsers: User[] = await fetch("someApi.com");
+      setUsers(newUsers);
+    })();
+  }, []);
+
+  return (
+    <>
+      Users: {users.length}
+      {users.map((item) => {
+        <User {...item} />;
+      })}
+    </>
+  );
+}
+```

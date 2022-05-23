@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+import withMDX from "@next/mdx";
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = withMDX({
+  reactStrictMode: true,
+});
+
+export default nextConfig;
